@@ -40,10 +40,10 @@
         <Button x:Name="btnEquals" Grid.Row="6" Grid.Column="3"  Tag="=" Click="BtnEquals_Click">=</Button>
         <Button x:Name="btnDot" Grid.Row="6" Grid.Column="2" >.</Button>
         <!--Other functions-->
-        <Button x:Name="btnClearEntry" Grid.Row="1" Grid.Column="0">CE</Button>
-        <Button x:Name="btnClear" Grid.Row="1" Grid.Column="1">C</Button>
-        <Button x:Name="btnBackspace" Grid.Row="1" Grid.Column="2">&lt;</Button>
-        <Button x:Name="btnPosNeg" Grid.Row="5" Grid.Column="0">+-</Button>
+        <Button x:Name="btnClearEntry" Grid.Row="1" Grid.Column="0" Click="BtnClearEntry_Click">CE</Button>
+        <Button x:Name="btnClear" Grid.Row="1" Grid.Column="1" Click="BtnClear_Click">C</Button>
+        <Button x:Name="btnBackspace" Grid.Row="1" Grid.Column="2" Click="BtnBackspace_Click">&lt;</Button>
+        <Button x:Name="btnPosNeg" Grid.Row="5" Grid.Column="0" Click="BtnPosNeg_Click">+-</Button>
         <!--Display-->
         <TextBox x:Name="Display" IsReadOnly="False" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="20" BorderThickness="0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"></TextBox>
     </Grid>

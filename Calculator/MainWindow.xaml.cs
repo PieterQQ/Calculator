@@ -70,6 +70,53 @@ namespace Calculator
                     break;
 
             }
-        }   
+        }
+
+        private void BtnClearEntry_Click(object sender, RoutedEventArgs e)
+        {
+            if (operation is null)
+                number1 = 0;
+            else
+                number2 = 0;
+            Display.Text = "0";
+        }
+
+        private void BtnClear_Click(object sender, RoutedEventArgs e)
+        {
+            number1 = 0;
+            number2 = 0;
+            operation = null;
+            Display.Text = "0";
+        }
+
+        private void BtnBackspace_Click(object sender, RoutedEventArgs e)
+        {
+            if (operation is null)
+            {
+
+                number1 = (number1 / 10);
+                Display.Text = number1.ToString();
+            }
+            else
+            {
+                number2 = (number2 / 10);
+                Display.Text = number2.ToString();
+            }
+        }
+
+        private void BtnPosNeg_Click(object sender, RoutedEventArgs e)
+        {
+            if (operation is null)
+            {
+
+                number1 = (number1 * -1);
+                Display.Text = number1.ToString();
+            }
+            else
+            {
+                number2 = (number2 * -1);
+                Display.Text = number2.ToString();
+            }
+        }
     }
 }
