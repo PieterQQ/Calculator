@@ -135,15 +135,20 @@ namespace Calculator
 
         private void BtnDot_Click(object sender, RoutedEventArgs e)
         {
-            if (operation is null)
+            if (!number1.Contains(","))
             {
-
+                if(number1 == String.Empty)
+                    number1 += "0,";
+                else
                 number1 += ",";
                 Display.Text = number1.ToString();
             }
-            else
+            else if (!number2.Contains(","))
             {
-                number2 += ",";
+                if (number2 == String.Empty)
+                    number2 += "0,";
+                else
+                    number2 += ",";
                 Display.Text = number2.ToString();
             }
         }
