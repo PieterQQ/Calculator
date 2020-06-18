@@ -33,12 +33,12 @@
         <Button x:Name="btn3" Grid.Row="4" Grid.Column="2" Click="NumberBtn_Click" Tag="3">3</Button>
         <Button x:Name="btn0" Grid.Row="5" Grid.Column="1" Click="NumberBtn_Click" Tag="0">0</Button>
         <!-- Maths-->
-        <Button x:Name="btnDivide" Grid.Row="1" Grid.Column="3">/</Button>
-        <Button x:Name="btnTimes" Grid.Row="2" Grid.Column="3">*</Button>
-        <Button x:Name="btnMinus" Grid.Row="3" Grid.Column="3">-</Button>
-        <Button x:Name="btnPLus" Grid.Row="4" Grid.Column="3">+</Button>
-        <Button x:Name="btnEquals" Grid.Row="6" Grid.Column="3">=</Button>
-        <Button x:Name="btnDot" Grid.Row="6" Grid.Column="2">.</Button>
+        <Button x:Name="btnDivide" Grid.Row="1" Grid.Column="3" Click="OperationBtn_Click" Tag="/">/</Button>
+        <Button x:Name="btnTimes" Grid.Row="2" Grid.Column="3" Click="OperationBtn_Click" Tag="*">*</Button>
+        <Button x:Name="btnMinus" Grid.Row="3" Grid.Column="3" Click="OperationBtn_Click" Tag="-">-</Button>
+        <Button x:Name="btnPLus" Grid.Row="4" Grid.Column="3" Click="OperationBtn_Click" Tag="+">+</Button>
+        <Button x:Name="btnEquals" Grid.Row="6" Grid.Column="3"  Tag="=" Click="BtnEquals_Click">=</Button>
+        <Button x:Name="btnDot" Grid.Row="6" Grid.Column="2" >.</Button>
         <!--Other functions-->
         <Button x:Name="btnClearEntry" Grid.Row="1" Grid.Column="0">CE</Button>
         <Button x:Name="btnClear" Grid.Row="1" Grid.Column="1">C</Button>

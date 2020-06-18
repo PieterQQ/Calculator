@@ -40,9 +40,36 @@ namespace Calculator
             }
             else
             {
-                number2 = (number2 * 10) + (decimal)clickedButton.Tag;
+                number2 = (number2 * 10) + decimal.Parse(clickedButton.Tag.ToString());
                 Display.Text = number2.ToString();
             }
         }
+
+        private void OperationBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = sender as Button;
+            operation = clickedButton.Tag.ToString();
+            Display.Text = "0";
+        }
+
+        private void BtnEquals_Click(object sender, RoutedEventArgs e)
+        {
+            switch (operation)
+            {
+                case "+":
+                    Display.Text = (number1 + number2).ToString();
+                    break;
+                case "-":
+                    Display.Text = (number1 - number2).ToString();
+                    break;
+                case "*":
+                    Display.Text = (number1 * number2).ToString();
+                    break;
+                case "/":
+                    Display.Text = (number1 / number2).ToString();
+                    break;
+
+            }
+        }   
     }
 }
