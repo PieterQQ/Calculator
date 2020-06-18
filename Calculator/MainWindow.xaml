@@ -46,5 +46,6 @@
         <Button x:Name="btnPosNeg" Grid.Row="5" Grid.Column="0" Click="BtnPosNeg_Click">+-</Button>
         <!--Display-->
         <TextBox x:Name="Display" IsReadOnly="False" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="20" BorderThickness="0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"></TextBox>
+        <TextBox x:Name="DisplayHistory" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="6,0,0,0" BorderThickness="0"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="84"/>
     </Grid>
 </Window>

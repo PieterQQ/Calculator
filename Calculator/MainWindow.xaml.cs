@@ -40,8 +40,10 @@ namespace Calculator
             }
             else
             {
+               
                 number2 += clickedButton.Tag.ToString();
                 Display.Text = number2.ToString();
+                DisplayHistory.Text +=number2;
             }
         }
 
@@ -49,6 +51,7 @@ namespace Calculator
         {
             Button clickedButton = sender as Button;
             operation = clickedButton.Tag.ToString();
+            DisplayHistory.Text = number1 + operation;
             Display.Text = "0";
         }
 
