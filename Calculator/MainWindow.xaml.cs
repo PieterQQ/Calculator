@@ -21,8 +21,8 @@ namespace Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
-        private decimal number1 = 0;
-        private decimal number2 = 0;
+        private string number1 = String.Empty;
+        private string number2 = String.Empty;
         private string operation = null;
         public MainWindow()
         {
@@ -35,12 +35,12 @@ namespace Calculator
             if (operation is null)
             {
                
-                number1 = (number1 * 10) + decimal.Parse(clickedButton.Tag.ToString());
+                number1 += clickedButton.Tag.ToString();
                 Display.Text = number1.ToString();
             }
             else
             {
-                number2 = (number2 * 10) + decimal.Parse(clickedButton.Tag.ToString());
+                number2 += clickedButton.Tag.ToString();
                 Display.Text = number2.ToString();
             }
         }
@@ -57,34 +57,48 @@ namespace Calculator
             switch (operation)
             {
                 case "+":
-                    Display.Text = (number1 + number2).ToString();
+                    Display.Text = (double.Parse(number1) + double.Parse(number2)).ToString();
                     break;
                 case "-":
-                    Display.Text = (number1 - number2).ToString();
+                    Display.Text = (double.Parse(number1) - double.Parse(number2)).ToString();
                     break;
                 case "*":
-                    Display.Text = (number1 * number2).ToString();
+                    Display.Text = (double.Parse(number1) * double.Parse(number2)).ToString();
                     break;
                 case "/":
-                    Display.Text = (number1 / number2).ToString();
+                    if (number2!="0")
+                    {
+                        Display.Text = (double.Parse(number1) / double.Parse(number2)).ToString();
+                       
+                    }
+                 else
+                    {
+                        Display.Text = "Błąd dzielenia przez 0";
+                         number1 = String.Empty;
+                        number2 = String.Empty;
+                        operation = null;
+                        return;
+                    }
                     break;
 
             }
+            number1 = Display.Text;
+            number2 = String.Empty;
         }
 
         private void BtnClearEntry_Click(object sender, RoutedEventArgs e)
         {
             if (operation is null)
-                number1 = 0;
+                number1 = String.Empty;
             else
-                number2 = 0;
+                number2 = String.Empty;
             Display.Text = "0";
         }
 
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
-            number1 = 0;
-            number2 = 0;
+            number1 = String.Empty;
+            number2 = String.Empty;
             operation = null;
             Display.Text = "0";
         }
@@ -94,12 +108,12 @@ namespace Calculator
             if (operation is null)
             {
 
-                number1 = (number1 / 10);
+                number1 = number1.Remove(number1.Length - 1);
                 Display.Text = number1.ToString();
             }
             else
             {
-                number2 = (number2 / 10);
+                number2 = number2.Remove(number2.Length - 1);
                 Display.Text = number2.ToString();
             }
         }
@@ -109,12 +123,27 @@ namespace Calculator
             if (operation is null)
             {
 
-                number1 = (number1 * -1);
+                number1 = (double.Parse(number1) * -1).ToString();
                 Display.Text = number1.ToString();
             }
             else
             {
-                number2 = (number2 * -1);
+                number2 = (double.Parse(number2) * -1).ToString();
+                Display.Text = number2.ToString();
+            }
+        }
+
+        private void BtnDot_Click(object sender, RoutedEventArgs e)
+        {
+            if (operation is null)
+            {
+
+                number1 += ",";
+                Display.Text = number1.ToString();
+            }
+            else
+            {
+                number2 += ",";
                 Display.Text = number2.ToString();
             }
         }
