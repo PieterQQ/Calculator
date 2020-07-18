@@ -36,13 +36,13 @@ namespace Calculator
             {
                
                 number1 += clickedButton.Tag.ToString();
-                Display.Text = number1.ToString();
+                Display.Text = number1;
             }
             else
             {
                
                 number2 += clickedButton.Tag.ToString();
-                Display.Text = number2.ToString();
+                Display.Text = number2;
                 DisplayHistory.Text +=number2;
             }
         }
@@ -60,18 +60,18 @@ namespace Calculator
             switch (operation)
             {
                 case "+":
-                    Display.Text = (double.Parse(number1) + double.Parse(number2)).ToString();
+                    Display.Text = (double.Parse(number1.ToLower()) + double.Parse(number2.ToLower())).ToString();
                     break;
                 case "-":
-                    Display.Text = (double.Parse(number1) - double.Parse(number2)).ToString();
+                    Display.Text = (double.Parse(number1.ToLower()) - double.Parse(number2.ToLower())).ToString();
                     break;
                 case "*":
-                    Display.Text = (double.Parse(number1) * double.Parse(number2)).ToString();
+                    Display.Text = (double.Parse(number1.ToLower()) * double.Parse(number2.ToLower())).ToString();
                     break;
                 case "/":
                     if (number2!="0")
                     {
-                        Display.Text = (double.Parse(number1) / double.Parse(number2)).ToString();
+                        Display.Text = (double.Parse(number1.ToLower()) / double.Parse(number2.ToLower())).ToString();
                        
                     }
                  else
